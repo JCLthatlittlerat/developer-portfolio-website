@@ -1,4 +1,5 @@
 import { Target, Zap, Eye } from "lucide-react";
+import Introduction from "./Introduction";
 
 export function About() {
   const strengths = [
@@ -38,16 +39,11 @@ export function About() {
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               I'm a passionate front-end developer dedicated to creating modern,
               user-friendly web interfaces that make a difference. With
-              expertise in modern JavaScript frameworks and a keen eye for
-              design, I transform creative concepts into functional, beautiful
-              digital products.
+              expertise in modern JavaScript frameworks and libraries, I
+              transform creative concepts into functional, beautiful digital
+              products.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              My focus is on writing clean, maintainable code while ensuring
-              responsive design, optimal performance, and seamless user
-              experiences across all devices. I believe great web development is
-              where technical excellence meets thoughtful design.
-            </p>
+            <Introduction />
           </div>
 
           {/* Strengths */}
