@@ -8,6 +8,7 @@ import { Services } from "./components/Services";
 import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import GithubActivity from "./components/GitHubActivity";
 
 export default function App() {
   useEffect(() => {
@@ -23,6 +24,7 @@ export default function App() {
         <About />
         <Skills />
         <Projects />
+        <GithubActivity />
         <Services />
         <Testimonials />
         <Contact />

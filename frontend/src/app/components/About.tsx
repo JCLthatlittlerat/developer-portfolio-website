@@ -5,18 +5,21 @@ export function About() {
     {
       icon: Target,
       title: "Problem Solving",
-      description: "Breaking down complex challenges into elegant, maintainable solutions"
+      description:
+        "Breaking down complex challenges into elegant, maintainable solutions",
     },
     {
       icon: Zap,
       title: "Performance",
-      description: "Building fast, optimized applications that deliver exceptional user experiences"
+      description:
+        "Building fast, optimized applications that deliver exceptional user experiences",
     },
     {
       icon: Eye,
       title: "Attention to Detail",
-      description: "Pixel-perfect implementations with clean, semantic code structure"
-    }
+      description:
+        "Pixel-perfect implementations with clean, semantic code structure",
+    },
   ];
 
   return (
@@ -33,16 +36,17 @@ export function About() {
           {/* Bio */}
           <div>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              I'm a passionate front-end developer dedicated to creating modern, 
-              user-friendly web interfaces that make a difference. With expertise in 
-              modern JavaScript frameworks and a keen eye for design, I transform 
-              creative concepts into functional, beautiful digital products.
+              I'm a passionate front-end developer dedicated to creating modern,
+              user-friendly web interfaces that make a difference. With
+              expertise in modern JavaScript frameworks and a keen eye for
+              design, I transform creative concepts into functional, beautiful
+              digital products.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              My focus is on writing clean, maintainable code while ensuring 
-              responsive design, optimal performance, and seamless user experiences 
-              across all devices. I believe great web development is where technical 
-              excellence meets thoughtful design.
+              My focus is on writing clean, maintainable code while ensuring
+              responsive design, optimal performance, and seamless user
+              experiences across all devices. I believe great web development is
+              where technical excellence meets thoughtful design.
             </p>
           </div>
 
@@ -59,7 +63,9 @@ export function About() {
                   </div>
                   <div>
                     <h3 className="mb-2">{strength.title}</h3>
-                    <p className="text-muted-foreground">{strength.description}</p>
+                    <p className="text-muted-foreground">
+                      {strength.description}
+                    </p>
                   </div>
                 </div>
               </div>
