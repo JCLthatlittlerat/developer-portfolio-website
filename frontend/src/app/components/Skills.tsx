@@ -1,14 +1,31 @@
-import { Code2, Layout, Boxes, GitBranch, Smartphone, Cloud } from "lucide-react";
-
+import { Smartphone, Cloud } from "lucide-react";
+import {
+  FaReact,
+  FaHtml5,
+  FaCss3,
+  FaJs,
+  FaGit,
+  FaLink,
+  FaCode,
+} from "react-icons/fa";
+import { MdApi } from "react-icons/md";
 export function Skills() {
   const skills = [
-    { name: "HTML", icon: Code2, color: "from-orange-500 to-red-500" },
-    { name: "CSS", icon: Layout, color: "from-blue-500 to-cyan-500" },
-    { name: "JavaScript", icon: Code2, color: "from-yellow-500 to-amber-500" },
-    { name: "React", icon: Boxes, color: "from-cyan-500 to-blue-500" },
-    { name: "Git", icon: GitBranch, color: "from-red-500 to-orange-500" },
-    { name: "Responsive Design", icon: Smartphone, color: "from-purple-500 to-pink-500" },
-    { name: "API Integration", icon: Cloud, color: "from-green-500 to-emerald-500" },
+    { name: "HTML", icon: FaHtml5, color: "from-orange-500 to-red-500" },
+    { name: "CSS", icon: FaCss3, color: "from-blue-500 to-cyan-500" },
+    { name: "JavaScript", icon: FaJs, color: "from-yellow-500 to-amber-500" },
+    { name: "React", icon: FaReact, color: "from-cyan-500 to-blue-500" },
+    { name: "Git", icon: FaGit, color: "from-red-500 to-orange-500" },
+    {
+      name: "Responsive Design",
+      icon: Smartphone,
+      color: "from-purple-500 to-pink-500",
+    },
+    {
+      name: "API Integration",
+      icon: MdApi,
+      color: "from-green-500 to-emerald-500",
+    },
   ];
 
   return (
@@ -28,7 +45,9 @@ export function Skills() {
               className="group p-6 bg-card rounded-xl border border-border hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1"
             >
               <div className="flex flex-col items-center text-center gap-4">
-                <div className={`p-4 bg-gradient-to-br ${skill.color} bg-opacity-10 rounded-xl group-hover:scale-110 transition-transform`}>
+                <div
+                  className={`p-4 bg-gradient-to-br ${skill.color} bg-opacity-10 rounded-xl group-hover:scale-110 transition-transform`}
+                >
                   <skill.icon className="w-8 h-8 text-foreground" />
                 </div>
                 <h3 className="text-sm sm:text-base">{skill.name}</h3>
