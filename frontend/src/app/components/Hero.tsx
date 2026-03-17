@@ -24,13 +24,14 @@ export function Hero() {
 
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-          Front-End Developer Building Modern Web Experiences
+          Front-End Developer, Building Modern Web Experiences
         </h1>
 
         {/* Introduction */}
         <p className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
-          I craft beautiful, responsive websites and web applications with clean code and 
-          attention to detail. Transforming ideas into engaging digital experiences.
+          I craft beautiful, responsive websites and web applications with clean
+          code and attention to detail. Transforming ideas into engaging digital
+          experiences.
         </p>
 
         {/* CTA Buttons */}
