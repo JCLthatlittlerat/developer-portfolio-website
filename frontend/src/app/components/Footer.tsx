@@ -28,7 +28,8 @@ export function Footer() {
               </span>
             </div>
             <p className="text-muted-foreground">
-              Building modern web experiences with clean code and attention to detail.
+              Building modern web experiences with clean code and attention to
+              detail.
             </p>
           </div>
 
@@ -53,7 +54,7 @@ export function Footer() {
             <h3 className="mb-4">Contact</h3>
             <div className="space-y-2 text-muted-foreground">
               <p>hello@developer.com</p>
-              <p>+1 (555) 123-4567</p>
+              <p>+251-935-033-357</p>
               <p>Available for Remote Work</p>
             </div>
           </div>
@@ -62,10 +63,14 @@ export function Footer() {
         {/* Copyright */}
         <div className="pt-8 border-t border-border text-center">
           <p className="text-muted-foreground flex items-center justify-center gap-2 flex-wrap">
-            <span>© {new Date().getFullYear()} Front-End Developer. All rights reserved.</span>
+            <span>
+              © {new Date().getFullYear()} Front-End Developer. All rights
+              reserved.
+            </span>
             <span className="hidden sm:inline">•</span>
             <span className="flex items-center gap-1">
-              Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> and code
+              Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" />{" "}
+              and code
             </span>
           </p>
         </div>

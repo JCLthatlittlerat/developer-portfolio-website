@@ -1,7 +1,7 @@
 import React from "react";
 import { GitHubCalendar } from "react-github-calendar";
 
-function GithubActivity() {
+export function GithubActivity() {
   return (
     <section className="text-center m-4 p-4">
       <h2 className="text-3xl sm:text-4xl mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
@@ -12,5 +12,3 @@ function GithubActivity() {
     </section>
   );
 }
-
-export default GithubActivity;

@@ -26,14 +26,14 @@ export default function Introduction() {
   return (
     <article className="max-w-3xl mx-auto text-left">
       <div className="relative rounded-2xl border border-border bg-slate-950/60 shadow-xl shadow-black/20 overflow-hidden">
-        <header className="flex items-center gap-2 px-4 py-3 bg-slate-900/70 border-b border-border">
+        <div className="flex items-center gap-2 px-4 py-3 bg-slate-900/70 border-b border-border">
           <span className="h-3 w-3 rounded-full bg-red-500" />
           <span className="h-3 w-3 rounded-full bg-amber-400" />
           <span className="h-3 w-3 rounded-full bg-green-500" />
           <span className="ml-auto text-xs text-muted-foreground">
             JavaScript
           </span>
-        </header>
+        </div>
 
         <pre className="m-0 overflow-x-auto p-5 text-sm leading-relaxed">
           <code ref={codeRef} className="language-js">

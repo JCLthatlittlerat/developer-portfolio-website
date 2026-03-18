@@ -24,7 +24,6 @@ export function Navigation() {
     { name: "Skills", id: "skills" },
     { name: "Projects", id: "projects" },
     { name: "Services", id: "services" },
-    { name: "Testimonials", id: "testimonials" },
     { name: "Contact", id: "contact" },
   ];
 
@@ -70,7 +69,11 @@ export function Navigation() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 text-foreground hover:bg-secondary rounded-lg transition-colors"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
       </div>
