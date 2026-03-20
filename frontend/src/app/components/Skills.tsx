@@ -2,20 +2,52 @@ import { Smartphone, Cloud } from "lucide-react";
 import {
   FaReact,
   FaHtml5,
-  FaCss3,
+  FaCss3Alt,
   FaJs,
-  FaGit,
+  FaGitAlt,
   FaLink,
   FaCode,
 } from "react-icons/fa";
 import { MdApi } from "react-icons/md";
+import { SiNextdotjs } from "react-icons/si";
 export function Skills() {
   const skills = [
-    { name: "HTML", icon: FaHtml5, color: "from-orange-500 to-red-500" },
-    { name: "CSS", icon: FaCss3, color: "from-blue-500 to-cyan-500" },
-    { name: "JavaScript", icon: FaJs, color: "from-yellow-500 to-amber-500" },
-    { name: "React", icon: FaReact, color: "from-cyan-500 to-blue-500" },
-    { name: "Git", icon: FaGit, color: "from-red-500 to-orange-500" },
+    {
+      name: "HTML",
+      icon: FaHtml5,
+      color: "from-white to-white",
+      textColor: "text-orange-500",
+    },
+    {
+      name: "CSS",
+      icon: FaCss3Alt,
+      color: "from-white to-white",
+      textColor: "text-blue-500",
+    },
+    {
+      name: "JavaScript",
+      icon: FaJs,
+      color: "from-gray-900 to-gray-900",
+      textColor: "text-yellow-500",
+    },
+    {
+      name: "React",
+      icon: FaReact,
+      color: "from-white to-white",
+      textColor: "text-cyan-500",
+    },
+    {
+      name: "Next",
+      icon: SiNextdotjs,
+      color: "from-white to-white",
+      textColor: "text-black",
+    },
+    {
+      name: "Git",
+      icon: FaGitAlt,
+      color: "from-white to-white",
+      textColor: "text-red-500",
+    },
     {
       name: "Responsive Design",
       icon: Smartphone,
@@ -48,7 +80,7 @@ export function Skills() {
                 <div
                   className={`p-4 bg-gradient-to-br ${skill.color} bg-opacity-10 rounded-xl group-hover:scale-110 transition-transform`}
                 >
-                  <skill.icon className="w-8 h-8 text-foreground" />
+                  <skill.icon className={`w-8 h-8 ${skill.textColor} `} />
                 </div>
                 <h3 className="text-sm sm:text-base">{skill.name}</h3>
               </div>
