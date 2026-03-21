@@ -2,7 +2,10 @@
   "name": "developer-portfolio-website",
   "version": "1.0.0",
   "scripts": {
-    "build": "cd frontend && npm run build"
+    "build": "tsc -b && vite build",
+    "dev": "vite",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
