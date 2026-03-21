@@ -1,13 +1,5 @@
-import { Smartphone, Cloud } from "lucide-react";
-import {
-  FaReact,
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaGitAlt,
-  FaLink,
-  FaCode,
-} from "react-icons/fa";
+import { Smartphone } from "lucide-react";
+import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaGitAlt } from "react-icons/fa";
 import { MdApi } from "react-icons/md";
 import { SiNextdotjs } from "react-icons/si";
 export function Skills() {
