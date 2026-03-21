@@ -10,8 +10,8 @@ export function Projects() {
       image:
         "https://images.unsplash.com/photo-1771085613088-dd436e17d75e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmF2ZWwlMjB0b3VycyUyMHZhY2F0aW9uJTIwdHJvcGljYWx8ZW58MXx8fHwxNzczNzczODA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
       technologies: ["React", "JavaScript", "API Integration", "CSS"],
-      github: "#",
-      demo: "#",
+      github: "https://github.com/JCLthatlittlerat/tour-with-olyad-app.git",
+      demo: "https://travel-with-olyad-app.netlify.app/",
     },
     {
       title: "Meals App",
@@ -20,8 +20,8 @@ export function Projects() {
       image:
         "https://images.unsplash.com/photo-1762922425226-8cfe6987e7b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb29kJTIwbWVhbHMlMjByZXN0YXVyYW50JTIwZGluaW5nfGVufDF8fHx8MTc3Mzc3MzgwNnww&ixlib=rb-4.1.0&q=80&w=1080",
       technologies: ["React", "Context API", "useReducer", "JavaScript"],
-      github: "#",
-      demo: "#",
+      github: "https://github.com/JCLthatlittlerat/menu-of-olyad-app.git",
+      demo: "https://eat-with-olyad-app.netlify.app/",
     },
     // was here
     {
@@ -40,7 +40,7 @@ export function Projects() {
         "A modern money transfer mobile application UI concept designed to simplify sending and receiving money. Features intuitive navigation, transaction history, and secure payment flows.",
       image:
         "https://images.unsplash.com/photo-1726056652605-c4cf751ec0df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBwYXltZW50JTIwZmludGVjaCUyMGFwcHxlbnwxfHx8fDE3NzM3NzM4MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      technologies: ["React", "Mobile UI", "JavaScript", "Responsive Design"],
+      technologies: ["Next", "Mobile UI", "JavaScript", "Responsive Design"],
       github: "https://github.com/JCLthatlittlerat/etran-trustworthy-app.git",
       demo: "https://etran-trustworthy-app.netlify.app/",
     },
