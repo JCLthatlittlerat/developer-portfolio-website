@@ -40,7 +40,7 @@ export function Projects() {
         "A modern money transfer mobile application UI concept designed to simplify sending and receiving money. Features intuitive navigation, transaction history, and secure payment flows.",
       image:
         "https://images.unsplash.com/photo-1726056652605-c4cf751ec0df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBwYXltZW50JTIwZmludGVjaCUyMGFwcHxlbnwxfHx8fDE3NzM3NzM4MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      technologies: ["Next", "Mobile UI", "JavaScript", "Responsive Design"],
+      technologies: ["Next", "Mobile UI", "TypeScript", "Responsive Design"],
       github: "https://github.com/JCLthatlittlerat/etran-trustworthy-app.git",
       demo: "https://etran-trustworthy-app.netlify.app/",
     },

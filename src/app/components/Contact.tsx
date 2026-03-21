@@ -1,28 +1,87 @@
-import { useState } from "react";
-import { Mail, Github, Linkedin, Send, MapPin, Phone } from "lucide-react";
-
+import { useRef, useState } from "react";
+import { Mail, Send, MapPin, Phone } from "lucide-react";
+import { FaUpwork, FaLinkedin, FaGithub } from "react-icons/fa6";
+import emailjs from "@emailjs/browser";
 export function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "hey👋, let's connect?",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState("");
+  const form = useRef<HTMLFormElement | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
+    console.log("inside the handleSubmit1");
+    // Replace with your actual IDs from EmailJS dashboard
+    if (!form.current) {
+      setStatus("ERROR");
+      return;
+    }
+    console.log("inside the handleSubmit2");
+
+    emailjs
+      .sendForm(
+        "service_qr5mef5",
+        "template_exg6jwp",
+        form.current,
+        "2Af9_Hz2ffrzoj9gT",
+      )
+      .then(
+        () => {
+          alert("Message sent successfully!");
+          setFormData({
+            name: "",
+            email: "",
+            message: "hey👋, let's connect?",
+          });
+          // e.target.reset(); // Reset the form after submission
+        },
+        (error) => {
+          alert(`Failed to send message. ${error.message}`);
+        },
+      );
+    // // a logic to handle form submission
+    //     const form = e.target;
+    //     const data = new FormData(form);
+    //     const endpoint = 'YOUR_FORM_ENDPOINT_URL'; // Replace with your service's endpoint
+
+    //     try {
+    //       const response = await fetch(endpoint, {
+    //         method: 'POST',
+    //         body: data,
+    //         headers: {
+    //           'Accept': 'application/json' // Check your service's documentation for required headers
+    //         }
+    //       });
+
+    //       if (response.ok) {
+    //         setStatus('SUCCESS');
+    //         form.reset();
+    //       } else {
+    //         setStatus('ERROR');
+    //       }
+    //     } catch (error) {
+    //       setStatus('ERROR');
+    //     }
+    //   };
+
     // Simulate form submission
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", email: "", message: "hey👋, let's connect?" });
     }, 3000);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -30,12 +89,13 @@ export function Contact() {
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl mb-4 bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
             Get In Touch
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-linear-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
           <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind? Let's work together to create something amazing
+            Have a project in mind? Let's work together to create something
+            amazing
           </p>
         </div>
 
@@ -45,25 +105,30 @@ export function Contact() {
             <h3 className="text-xl mb-6">Contact Information</h3>
             <div className="space-y-6 mb-8">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
+                <div className="p-3 bg-linear-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
                   <Mail className="w-5 h-5 text-blue-400" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <p>hello@developer.com</p>
+                  <a
+                    href="mailto:olyadnegero@gmail.com"
+                    title="connect with olyad!"
+                  >
+                    <p>olyadnegero@gmail.com</p>
+                  </a>
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
+                <div className="p-3 bg-linear-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
                   <Phone className="w-5 h-5 text-blue-400" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Phone</p>
-                  <p>+1 (555) 123-4567</p>
+                  <p>+(251)935033357</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
+                <div className="p-3 bg-linear-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
                   <MapPin className="w-5 h-5 text-blue-400" />
                 </div>
                 <div>
@@ -81,29 +146,33 @@ export function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 bg-secondary hover:bg-secondary/80 rounded-lg transition-colors border border-border hover:border-blue-500/50 group"
+                title="link to github repo"
               >
-                <Github className="w-6 h-6 group-hover:text-blue-400 transition-colors" />
+                <FaGithub className="w-6 h-6 group-hover:text-blue-400 transition-colors" />
               </a>
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 bg-secondary hover:bg-secondary/80 rounded-lg transition-colors border border-border hover:border-blue-500/50 group"
+                title="link to linkedin repo"
               >
-                <Linkedin className="w-6 h-6 group-hover:text-blue-400 transition-colors" />
+                <FaLinkedin className="w-6 h-6 group-hover:text-blue-400 transition-colors" />
               </a>
               <a
-                href="mailto:hello@developer.com"
+                href="https://www.upwork.com/freelancers/~0143d939d5369b7bbc?mp_source=share"
+                target="_blank"
                 className="p-4 bg-secondary hover:bg-secondary/80 rounded-lg transition-colors border border-border hover:border-blue-500/50 group"
+                title="link to upwork repo"
               >
-                <Mail className="w-6 h-6 group-hover:text-blue-400 transition-colors" />
+                <FaUpwork className="w-6 h-6 group-hover:text-blue-400 transition-colors" />
               </a>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div>
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <article>
+            <form onSubmit={handleSubmit} ref={form} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block mb-2 text-sm">
                   Name
@@ -152,7 +221,7 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={submitted}
-                className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-8 py-4 bg-linear-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {submitted ? (
                   "Message Sent!"
@@ -164,7 +233,7 @@ export function Contact() {
                 )}
               </button>
             </form>
-          </div>
+          </article>
         </div>
       </div>
     </section>
