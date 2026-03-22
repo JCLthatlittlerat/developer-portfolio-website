@@ -1,77 +1,52 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Mail, Send, MapPin, Phone } from "lucide-react";
 import { FaUpwork, FaLinkedin, FaGithub } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
+import { useDataContext } from "../../contextProvider/context";
 export function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "hey👋, let's connect?",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const { submitted, setSubmitted } = useDataContext();
   const form = useRef<HTMLFormElement | null>(null);
-
+  const service_id = import.meta.env.VITE_SERVICE_ID;
+  const template_id = import.meta.env.VITE_TEMPLATE_ID;
+  const public_ky = import.meta.env.VITE_PUBLIC_KEY;
+  useEffect(() => {
+    // wait for 3second for message to be displayed
+    const timerId = setTimeout(() => {
+      setSubmitted(false);
+    }, 3000);
+    // clear the timeout
+    if (!submitted) {
+      clearTimeout(timerId);
+    }
+  }, [submitted, setSubmitted]);
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
-    console.log("inside the handleSubmit1");
     // Replace with your actual IDs from EmailJS dashboard
     if (!form.current) {
       return;
     }
-    console.log("inside the handleSubmit2");
 
-    emailjs
-      .sendForm(
-        "service_qr5mef5",
-        "template_exg6jwp",
-        form.current,
-        "2Af9_Hz2ffrzoj9gT",
-      )
-      .then(
-        () => {
-          alert("Message sent successfully!");
-          setFormData({
-            name: "",
-            email: "",
-            message: "hey👋, let's connect?",
-          });
-          // e.target.reset(); // Reset the form after submission
-        },
-        (error) => {
-          alert(`Failed to send message. ${error.message}`);
-        },
-      );
-    // // a logic to handle form submission
-    //     const form = e.target;
-    //     const data = new FormData(form);
-    //     const endpoint = 'YOUR_FORM_ENDPOINT_URL'; // Replace with your service's endpoint
+    setSubmitted(true); // Trigger the popup
+    emailjs.sendForm(service_id, template_id, form.current, public_ky).then(
+      () => {
+        // alert("Message sent successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          message: "hey👋, let's connect?",
+        });
 
-    //     try {
-    //       const response = await fetch(endpoint, {
-    //         method: 'POST',
-    //         body: data,
-    //         headers: {
-    //           'Accept': 'application/json' // Check your service's documentation for required headers
-    //         }
-    //       });
-
-    //       if (response.ok) {
-    //         setStatus('SUCCESS');
-    //         form.reset();
-    //       } else {
-    //         setStatus('ERROR');
-    //       }
-    //     } catch (error) {
-    //       setStatus('ERROR');
-    //     }
-    //   };
-
-    // Simulate form submission
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: "", email: "", message: "hey👋, let's connect?" });
-    }, 3000);
+        // e.target.reset(); // Reset the form after submission
+      },
+      (error) => {
+        alert(`Failed to send message. ${error.message}`);
+      },
+    );
   };
 
   const handleChange = (
