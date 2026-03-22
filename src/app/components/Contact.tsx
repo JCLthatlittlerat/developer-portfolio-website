@@ -14,6 +14,15 @@ export function Contact() {
   const service_id = import.meta.env.VITE_SERVICE_ID;
   const template_id = import.meta.env.VITE_TEMPLATE_ID;
   const public_ky = import.meta.env.VITE_PUBLIC_KEY;
+  
+  // Debug logging for environment variables (remove in production)
+  useEffect(() => {
+    console.log('Environment variables check:', {
+      service_id: service_id ? '✓ Set' : '✗ Undefined',
+      template_id: template_id ? '✓ Set' : '✗ Undefined',
+      public_ky: public_ky ? '✓ Set' : '✗ Undefined',
+    });
+  }, [service_id, template_id, public_ky]);
   useEffect(() => {
     // wait for 3second for message to be displayed
     const timerId = setTimeout(() => {
@@ -28,6 +37,17 @@ export function Contact() {
     e.preventDefault();
     // Replace with your actual IDs from EmailJS dashboard
     if (!form.current) {
+      return;
+    }
+
+    // Validate environment variables before sending
+    if (!service_id || !template_id || !public_ky) {
+      console.error('Missing EmailJS credentials:', {
+        service_id: service_id || 'undefined',
+        template_id: template_id || 'undefined',
+        public_ky: public_ky || 'undefined',
+      });
+      alert('Configuration error: EmailJS credentials are missing. Please contact the administrator.');
       return;
     }
 
