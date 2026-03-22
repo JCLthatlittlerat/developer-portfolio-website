@@ -87,10 +87,10 @@ export function Contact() {
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl mb-4 bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
             Get In Touch
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-linear-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
           <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
             Have a project in mind? Let's work together to create something
             amazing
@@ -103,7 +103,7 @@ export function Contact() {
             <h3 className="text-xl mb-6">Contact Information</h3>
             <div className="space-y-6 mb-8">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
+                <div className="p-3 bg-linear-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
                   <Mail className="w-5 h-5 text-blue-400" />
                 </div>
                 <div>
@@ -117,7 +117,7 @@ export function Contact() {
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
+                <div className="p-3 bg-linear-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
                   <Phone className="w-5 h-5 text-blue-400" />
                 </div>
                 <div>
@@ -126,7 +126,7 @@ export function Contact() {
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
+                <div className="p-3 bg-linear-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
                   <MapPin className="w-5 h-5 text-blue-400" />
                 </div>
                 <div>
@@ -219,10 +219,10 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={submitted}
-                className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-8 py-4 bg-linear-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {submitted ? (
-                  "Message Sent!"
+                  "Thanks for reaching out! I'll get back to you soon."
                 ) : (
                   <>
                     Send Message
