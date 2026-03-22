@@ -115,7 +115,7 @@ export function Contact() {
             <h3 className="text-xl mb-6">Connect With Me</h3>
             <div className="flex gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/JCLthatlittlerat"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 bg-secondary hover:bg-secondary/80 rounded-lg transition-colors border border-border hover:border-blue-500/50 group"
@@ -124,7 +124,7 @@ export function Contact() {
                 <FaGithub className="w-6 h-6 group-hover:text-blue-400 transition-colors" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/olifite"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 bg-secondary hover:bg-secondary/80 rounded-lg transition-colors border border-border hover:border-blue-500/50 group"

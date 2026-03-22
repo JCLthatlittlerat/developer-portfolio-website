@@ -53,8 +53,8 @@ export function Footer() {
           <div>
             <h3 className="mb-4">Contact</h3>
             <div className="space-y-2 text-muted-foreground">
-              <p>hello@developer.com</p>
-              <p>+251-935-033-357</p>
+              <p>olyadnegero@gmail.com</p>
+              <p>+(251)707750164</p>
               <p>Available for Remote Work</p>
             </div>
           </div>
